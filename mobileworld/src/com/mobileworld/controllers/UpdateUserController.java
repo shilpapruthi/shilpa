@@ -23,6 +23,8 @@ public class UpdateUserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("I  m update User");
 		response.setContentType("text/html");
     	PrintWriter out=response.getWriter();
     	
@@ -50,14 +52,22 @@ public class UpdateUserController extends HttpServlet {
     	
     	UserDao dao=new UserDaoImpl();
     	boolean r=dao.updateUser(userObj);
+    	
+    	
+    	
     	if(r){
+    		System.out.println("I m in if");
+    		User newObj=dao.getUser(userObj.getEmail());
+    		System.out.println("New Obj : "+newObj);
     		HttpSession session=request.getSession();
     		request.setAttribute("msg", "User updated Succesfully");
-    		session.setAttribute("user",userObj);
+    		session.setAttribute("user1",newObj);
     		RequestDispatcher rd=request.getRequestDispatcher("ViewProfile.jsp");
     		rd.forward(request, response);
     	}
     	else {
+    		
+    		System.out.println("I m in else");
     		request.setAttribute("msg", "Problem in Updation");
     		RequestDispatcher rd=request.getRequestDispatcher("UpdateProfile.jsp");
     		rd.forward(request, response);

@@ -21,7 +21,14 @@
         <ul class="dropdown-menu">
           <li><a href="AddCategory.jsp">Add Category</a></li>
           <li><a href="viewAllCategories">View All Categories</a></li>
-          <li><a href="getSubCategoryForm">Add Sub Category</a></li>
+          <li><a href="AddProduct_FetchData">Add Product</a></li>
+          <li><a href="viewAllProducts">View All Products</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Brand<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="AddBrand.jsp">Add Brand</a></li>
+          <li><a href="viewAllBrands">View All Brand</a></li>
         </ul>
       </li>
       <li><a href="#">About Us</a></li>
@@ -49,9 +56,9 @@
           <li><a href="ViewProfile.jsp">View Profile</a></li>
           <li><a href="UpdateProfile.jsp">Update Profile</a></li>
           <li><a href="ChangePassword.jsp">Change Password</a></li>
+        <li><a href="HomePage.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> 
         </ul>
       </li>
-      <li style="margin-top:-50px; margin-left:200px; margin-right:-125px;"><a href="HomePage.jsp"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
     </ul>
     </div>
   </div>

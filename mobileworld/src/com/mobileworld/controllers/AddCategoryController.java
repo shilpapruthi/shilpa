@@ -24,11 +24,12 @@ public class AddCategoryController extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		
 		String name=request.getParameter("categoryName");
-		String d=request.getParameter("desc");
+		String desc=request.getParameter("categoryDesc");
 		
 		Category catObj=new Category();
 		catObj.setCategoryName(name);
-		catObj.setCategoryDesc(d);
+		catObj.setCategoryDesc(desc);
+		
 		
 		CategoryDao daoObj=new CategoryDaoImpl();
 		boolean r=daoObj.addCategory(catObj);

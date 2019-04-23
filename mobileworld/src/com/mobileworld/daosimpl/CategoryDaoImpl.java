@@ -52,8 +52,8 @@ public class CategoryDaoImpl implements CategoryDao {
 			Connection conn=ConnectionProvider.getConnection();
 			PreparedStatement ps=conn.prepareStatement("update categorytab set catname=? , catdesc=? where catId=?");
 			ps.setString(1,categoryObj.getCategoryName());
-			ps.setString(2,categoryObj.getCategoryDesc());
 			ps.setInt(3,categoryObj.getCategoryId());
+			ps.setString(2,categoryObj.getCategoryDesc());
 			int i=ps.executeUpdate();
 			if(i!=0)return true;
 			}
@@ -73,12 +73,11 @@ public class CategoryDaoImpl implements CategoryDao {
 			if(rs.next()){
 				int id=rs.getInt(1);
 				String name=rs.getString(2);
-				String desc=rs.getString(3);
 				
 				Category cObj=new Category();
 				cObj.setCategoryId(id);
 				cObj.setCategoryName(name);
-				cObj.setCategoryDesc(desc);
+				cObj.setCategoryDesc(rs.getString(3));
 				return cObj;
 			}
 			}
@@ -98,12 +97,11 @@ public class CategoryDaoImpl implements CategoryDao {
 			while(rs.next()){
 				int id=rs.getInt(1);
 				String name=rs.getString(2);
-				String desc=rs.getString(3);
 				
 				Category cObj=new Category();
 				cObj.setCategoryId(id);
 				cObj.setCategoryName(name);
-				cObj.setCategoryDesc(desc);
+				cObj.setCategoryDesc(rs.getString(3));
 				
 				categories.add(cObj);
 				
@@ -115,4 +113,4 @@ public class CategoryDaoImpl implements CategoryDao {
 		return categories;
 	}
 
-}
+	}

@@ -1,9 +1,12 @@
 package com.mobileworld.models;
 
 public class Category {
+	
 	private int categoryId;
 	private String categoryName;
 	private String categoryDesc;
+	
+	
 	public int getCategoryId() {
 		return categoryId;
 	}
@@ -22,5 +25,7 @@ public class Category {
 	public void setCategoryDesc(String categoryDesc) {
 		this.categoryDesc = categoryDesc;
 	}
-
+	
+	
+	
 }

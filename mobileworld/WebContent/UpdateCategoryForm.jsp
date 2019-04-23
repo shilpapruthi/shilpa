@@ -2,28 +2,30 @@
 
 <br/>
 <!-- Content -->
-<div class="container">
+<div class="container" style="align:center; margin:10%;">
+<h1>Update Category Form </h1>
 <form class="form-horizontal" action="updateCategoryProcess" method="post">
-
- <div class="form-group">
-    <label class="control-label col-sm-2" for="categoryId">Category Id :</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="categoryId" name="categoryId" value="${requestScope.categoryObj.categoryId}" readonly="readonly">
+<div class="form-group">
+    <label class="control-label col-sm-2" for="categoryId" style="text-align:left;">Category ID :</label>
+    <div class="col-sm-10" style="width:30%;">
+    <input type="text" class="form-control" id="categoryId" name="categoryId" value="${categoryObj.categoryId}" readonly="readonly">
     </div>
- 
+  </div>
   <div class="form-group">
-    <label class="control-label col-sm-2" for="categoryName">Category Name :</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="categoryName" name="categoryName" value="${requestScope.categoryObj.categoryName}">
+    <label class="control-label col-sm-2" for="categoryName" style="text-align:left;">Category Name :</label>
+    <div class="col-sm-10" style="width:30%;">
+    <input type="text" class="form-control" id="categoryName" name="categoryName" value="${categoryObj.categoryName}">
     </div>
   </div>
-   <div class="form-group">
-    <label class="control-label col-sm-2" for="desc">Category Description:</label>
-    <div class="col-sm-10">
-    <input type="text" class="form-control" id="desc" name="desc" value="${requestScope.categoryObj.categoryDesc}">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="categoryDesc" style="text-align:left;">Category Desc :</label>
+    <div class="col-sm-10" style="width:30%;">
+    <textarea class="form-control" id="categoryDesc" name="categoryDesc" rows="5" cols="15" >
+    	${categoryObj.categoryDesc}
+    </textarea>
     </div>
   </div>
-    <button type="submit" class="btn btn-default">Update Category</button>
+    <button type="submit" class="btn btn-default" style="margin-left:200px;">Update Category</button>
 </form>
 
  </div>

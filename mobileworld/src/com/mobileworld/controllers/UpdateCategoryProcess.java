@@ -25,12 +25,12 @@ public class UpdateCategoryProcess extends HttpServlet {
 		
 		int id=Integer.parseInt(request.getParameter("categoryId"));
 		String name=request.getParameter("categoryName");
-		String d=request.getParameter("desc");
+		String desc=request.getParameter("categoryDesc");
 		
 		Category catObj=new Category();
 		catObj.setCategoryId(id);
 		catObj.setCategoryName(name);
-		catObj.setCategoryDesc(d);
+		catObj.setCategoryDesc(desc);
 		
 		CategoryDao daoObj=new CategoryDaoImpl();
 		boolean r=daoObj.updateCategory(catObj);
